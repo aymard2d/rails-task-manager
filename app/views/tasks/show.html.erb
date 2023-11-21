@@ -1,0 +1,12 @@
+<h2><%= @task.title %></h2>
+<h3><%= @task.details %></h3>
+<div class="btn btn-secondary"><%= @task.completed %></div>
+
+<br>
+  <%= link_to "Modifier", edit_task_path(@task) %>
+<br>
+  <%= link_to "Supprimer", task_path(@task),
+      data: {turbo_method: "delete", turbo_confirm: "Etes vous sur?"}
+  %>
+<br>
+<%= link_to "Retour à la liste", tasks_path%>
